@@ -37,6 +37,9 @@ class Personaje:
         self.proyectiles = []
         self.esta_flotando = False
         self.lista_plataformas = lista_plataformas
+        pygame.mixer.init()
+        pygame.mixer.music.load("assets/sonidos/ataque_melee_jugador.wav")
+        pygame.mixer.music.set_volume(0.01)
 
 
 # HABILIDADES PERSONAJE: ataque melee, proyectil, salto, caida lenta manteniendo shift
@@ -95,26 +98,23 @@ class Personaje:
         self.contador_pasos += 1
 
     def update(self, piso, lista_enemigos):
-        match self.que_hace:
-            case "derecha":
-                if not self.flag_muriendo:
+        if not self.flag_muriendo:
+            match self.que_hace:
+                case "derecha":
                     if not self.esta_saltando:
                         self.animar("personaje_camina")
                     self.mover(self.velocidad)
-            case "izquierda":
-                if not self.flag_muriendo:
+                case "izquierda":
                     if not self.esta_saltando:
                         self.animar("personaje_camina_izq")
                     self.mover(-self.velocidad)
-            case "idle":
-                if not self.flag_muriendo:
+                case "idle":
                     if not self.esta_saltando:
                         if self.flag_orientacion:
                             self.animar("personaje_idle")
                         else:
                             self.animar("personaje_idle_der")
-            case "salta":
-                if not self.flag_muriendo:
+                case "salta":
                     if not self.esta_saltando:
                         if self.esta_flotando:
                             if self.flag_orientacion:
@@ -128,30 +128,29 @@ class Personaje:
                                 self.animar("personaje_salta_der")
                         self.esta_saltando = True
                         self.desplazamiento_y = self.potencia_salto
-            case "proyectil":
-                if not self.flag_muriendo:
+                case "proyectil":
+                    pygame.mixer.music.play(0)
                     if self.flag_orientacion:
                         self.animar("personaje_dispara")
                     else:
                         self.animar("personaje_dispara_der")
-            case "golpe":
-                if not self.flag_muriendo:
+                case "golpe":
                     if not self.esta_saltando:
                         for enemigo in lista_enemigos:
                             self.atacar("golpe", enemigo)
-            case "golpea":
-                if not self.flag_muriendo:
+                case "golpea":
                     if not self.esta_saltando:
                         if self.flag_orientacion:
                             self.animar("personaje_golpe_izq")
                         else:
                             self.animar("personaje_golpe")
-            case "muere":
+            if self.que_hace == "muere":
                 self.animar("personaje_muerto")
+
         for proyectil in self.proyectiles:
             for enemigo in lista_enemigos:
                 proyectil.update(enemigo)
-
+                
         self.aplicar_gravedad(piso)
 
 
@@ -259,7 +258,6 @@ class Personaje:
 
 
     def matar_jugador(self):
-        if self.hp <= 0:
-            self.animar("personaje_muerto")
-            self.flag_muriendo = True
-            print("rip")
+        self.animar("personaje_muerto")
+        self.flag_muriendo = True
+        print("rip")

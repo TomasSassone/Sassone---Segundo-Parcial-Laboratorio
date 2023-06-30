@@ -5,6 +5,7 @@ from classes.class_enemigo import Enemigo
 from classes.class_nivel import *
 from classes.class_personaje import Personaje
 from classes.class_item import Item
+from classes.class_trampa import Trampa
 
 class Nivel_2(Nivel):
     def __init__(self, pantalla: pygame.Surface):
@@ -56,6 +57,11 @@ class Nivel_2(Nivel):
         carameloraro_2 = Item(30, 30, lados_plat3['left'].left + 50, lados_plat3['top'].top -1, diccionario_animaciones_item, 'carameloraro_idle', pantalla)
         lista_items = [pocion_1, pocion_2, carameloraro_1, carameloraro_2]
 
+        trampa1 = Trampa(lados_plat4['left'].left, lados_plat4['top'].top, diccionario_animaciones_trampas, 25, 12, lados_plat4['right'].right, pantalla, 3, "half")
+        trampa2 = Trampa(533, 128, diccionario_animaciones_trampas, 25, 12, 663, pantalla, 1, "half")
+        trampa2_half = Trampa(533, 128+12, diccionario_animaciones_trampas, 25, 12, 663, pantalla, 1, "half_volteada")
+        lista_trampas = [trampa1, trampa2, trampa2_half]
+
         mi_personaje = Personaje(40, 50, 150, 440, 3, diccionario_animaciones_jugador, 5, pantalla, lista_plataformas)
 
-        super().__init__(pantalla, mi_personaje, lista_plataformas, fondo, "assets/piso_laboratorio_2.png", lista_enemigos, lista_items)
+        super().__init__(pantalla, mi_personaje, lista_plataformas, fondo, "assets/piso_laboratorio_2.png", lista_enemigos, lista_items, lista_trampas)
