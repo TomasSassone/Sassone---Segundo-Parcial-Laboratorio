@@ -12,7 +12,7 @@ reescalar_imagenes(lista_barra_vida, 84, 26)
 
 #temporizador
 tiempo_actual = 0
-temporizador = 60
+temporizador = 30
 
 def dibujar_hud(pantalla, vidas:int, scorepoints):
     #score
@@ -24,6 +24,7 @@ def dibujar_hud(pantalla, vidas:int, scorepoints):
 
     tiempo_restante = temporizador - tiempo_actual//1000
     if tiempo_restante <= 0:
+        
         tiempo_restante = 0
 
     #temporizador

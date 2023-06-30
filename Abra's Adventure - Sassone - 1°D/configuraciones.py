@@ -338,6 +338,61 @@ rocket_fem_idle = [
                 pygame.image.load("assets/rocket secuaz/2 (3).png"),
 ]
 
+sierra = [
+    pygame.image.load("assets/rueda/rueda_1.png"),
+    pygame.image.load("assets/rueda/rueda_1.png"),
+    pygame.image.load("assets/rueda/rueda_1.png"),
+    pygame.image.load("assets/rueda/rueda_1.png"),
+    pygame.image.load("assets/rueda/rueda_1.png"),
+    pygame.image.load("assets/rueda/rueda_2.png"),
+    pygame.image.load("assets/rueda/rueda_2.png"),
+    pygame.image.load("assets/rueda/rueda_2.png"),
+    pygame.image.load("assets/rueda/rueda_2.png"),
+    pygame.image.load("assets/rueda/rueda_2.png"),
+    pygame.image.load("assets/rueda/rueda_3.png"),
+    pygame.image.load("assets/rueda/rueda_3.png"),
+    pygame.image.load("assets/rueda/rueda_3.png"),
+    pygame.image.load("assets/rueda/rueda_3.png"),
+    pygame.image.load("assets/rueda/rueda_3.png")
+]
+
+sierra_azul = [
+    pygame.image.load("assets/rueda_azul/rueda_azul_1.png"),
+    pygame.image.load("assets/rueda_azul/rueda_azul_1.png"),
+    pygame.image.load("assets/rueda_azul/rueda_azul_1.png"),
+    pygame.image.load("assets/rueda_azul/rueda_azul_1.png"),
+    pygame.image.load("assets/rueda_azul/rueda_azul_1.png"),
+    pygame.image.load("assets/rueda_azul/rueda_azul_2.png"),
+    pygame.image.load("assets/rueda_azul/rueda_azul_2.png"),
+    pygame.image.load("assets/rueda_azul/rueda_azul_2.png"),
+    pygame.image.load("assets/rueda_azul/rueda_azul_2.png"),
+    pygame.image.load("assets/rueda_azul/rueda_azul_2.png"),
+    pygame.image.load("assets/rueda_azul/rueda_azul_3.png"),
+    pygame.image.load("assets/rueda_azul/rueda_azul_3.png"),
+    pygame.image.load("assets/rueda_azul/rueda_azul_3.png"),
+    pygame.image.load("assets/rueda_azul/rueda_azul_3.png"),
+    pygame.image.load("assets/rueda_azul/rueda_azul_3.png")
+]
+
+sierra_half = [
+    pygame.image.load("assets/rueda_half/rueda_half_1.png"),
+    pygame.image.load("assets/rueda_half/rueda_half_1.png"),
+    pygame.image.load("assets/rueda_half/rueda_half_1.png"),
+    pygame.image.load("assets/rueda_half/rueda_half_1.png"),
+    pygame.image.load("assets/rueda_half/rueda_half_1.png"),
+    pygame.image.load("assets/rueda_half/rueda_half_2.png"),
+    pygame.image.load("assets/rueda_half/rueda_half_2.png"),
+    pygame.image.load("assets/rueda_half/rueda_half_2.png"),
+    pygame.image.load("assets/rueda_half/rueda_half_2.png"),
+    pygame.image.load("assets/rueda_half/rueda_half_2.png"),
+    pygame.image.load("assets/rueda_half/rueda_half_3.png"),
+    pygame.image.load("assets/rueda_half/rueda_half_3.png"),
+    pygame.image.load("assets/rueda_half/rueda_half_3.png"),
+    pygame.image.load("assets/rueda_half/rueda_half_3.png"),
+    pygame.image.load("assets/rueda_half/rueda_half_3.png")
+]
+
+sierra_half_volteada = girar_imagenes(sierra_half, False, True)
 
 ##############
 
@@ -426,3 +481,9 @@ diccionario_animaciones_enemigo['rocket_fem_hit_izq'] = rocket_fem_hit_izq
 diccionario_animaciones_item = {}
 diccionario_animaciones_item['pocion_idle'] = pocion_idle
 diccionario_animaciones_item['carameloraro_idle'] = carameloraro_idle
+
+diccionario_animaciones_trampas = {}
+diccionario_animaciones_trampas['sierra'] = sierra
+diccionario_animaciones_trampas['sierra_half'] = sierra_half
+diccionario_animaciones_trampas['sierra_half_volteada'] = sierra_half_volteada
+diccionario_animaciones_trampas['sierra_azul'] = sierra_azul

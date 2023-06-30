@@ -9,6 +9,11 @@ abra_inicio = pygame.transform.scale(abra_inicio, (150, 150))
 abra_pos = abra_inicio.get_rect(center = (ANCHO_PANTALLA/2, 350))
 flag_bajando = True
 
+pygame.mixer.init()
+pygame.mixer.music.load("assets/sonidos/Pokémon Fire Red - Title Screen (HQ).mp3")
+pygame.mixer.music.play(-1)
+pygame.mixer.music.set_volume(0)
+
 #abra pantalla de inicio
 fondo_start = Imagen("assets/fondo_start_frames/frame_00_delay-0.1s.png", ANCHO_PANTALLA, ALTO_PANTALLA, 0,0, pantalla)
 fondo_start = Imagen.cargar_imagen(fondo_start)
