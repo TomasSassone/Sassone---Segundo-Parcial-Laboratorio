@@ -1,9 +1,9 @@
 import pygame
 from pygame.locals import *
 
-from GUI_label import *
-from GUI_form import *
-from GUI_button_image import *
+from gui.GUI_label import *
+from gui.GUI_form import *
+from gui.GUI_button_image import *
 
 class FormMenuScore(Form):
     def __init__(self, pantalla, x, y, w, h, color_background, color_border, active, path_image, score, margen_y, margen_x, espacio):
@@ -18,10 +18,10 @@ class FormMenuScore(Form):
         self._margen_y = margen_y
 
         lbl_jugador = Label(self._slave, x=margen_x + 10, y=20, w=w/2-margen_x-10, h=50, 
-                        text="Jugador", font="assets\Early GameBoy.ttf", font_size=30, font_color="whitesmoke", path_image="bar.png")
+                        text="Jugador", font="assets\Early GameBoy.ttf", font_size=30, font_color="whitesmoke", path_image="gui/bar.png")
         
         lbl_puntaje = Label(self._slave, x=margen_x + 10 + w/2-margen_x-10, y=20, w=w/2-margen_x-10, h=50, 
-                        text="Puntaje", font="assets\Early GameBoy.ttf", font_size=30, font_color="whitesmoke", path_image="bar.png")
+                        text="Puntaje", font="assets\Early GameBoy.ttf", font_size=30, font_color="whitesmoke", path_image="gui/bar.png")
         
         self.lista_widgets.append(lbl_jugador)
         self.lista_widgets.append(lbl_puntaje)

@@ -1,7 +1,7 @@
 import pygame
 import sys
 from pygame.locals import *
-from GUI_form_prueba import FormPrueba
+from GUI_form_principal import FormPrueba
 
 pygame.init()
 WIDTH = 1200
