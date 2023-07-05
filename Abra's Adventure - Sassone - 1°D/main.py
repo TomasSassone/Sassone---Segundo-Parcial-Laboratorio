@@ -1,69 +1,54 @@
-import pygame, sys, random
+import pygame
+import sys
 from pygame.locals import *
-from classes.class_imagen import *
-from classes.class_personaje import *
-from classes.class_plataforma import *
-from classes.class_item import *
+from pantalla_start import dibujar_start
 from constantes_pygame import *
-from configuraciones import *
-from pantalla_start import *
-from modo import *
-#from gui.GUI_form_prueba import FormInicio
-from gui.GUI_form_principal import FormInicio
+from gui.GUI_form_settings import FormSettings
+from sql import *
+from modo import cambiar_modo
 
-import sqlite3
-
-'''
-with sqlite3.connect("mi_base.db") as conexion:
-    try:
-        pass
-    except Exception as e:
-        pass
-'''
-
-#lista de colores: https://www.pygame.org/docs/ref/color_list.html
-
-### Setup #################################################################################
+# Inicializa Pygame
 pygame.init()
-RELOJ = pygame.time.Clock()
 
+# Declara reloj y dimensiones de la pantalla
+reloj = pygame.time.Clock()
+pantalla = pygame.display.set_mode((ANCHO_PANTALLA,ALTO_PANTALLA))
+
+# Declaro la flag de la pantalla de start
 flag_start = True
-juego_activo = True
 
-form_inicio = FormInicio(pantalla, 200, 175, 900, 350, "gold", "magenta", 5, True)
-#form_inicio = FormInicio()
-#form_prueba = FormInicio(pantalla, ANCHO_PANTALLA/2-400, ALTO_PANTALLA/2-250, 800, 500, "crimson", "blue", 3, True)
-#form_select_nivel.nivel_actual = [Nivel_1(pantalla), Nivel_2(pantalla), Nivel_3(pantalla)]
-#nivel_actual = Nivel_1(pantalla)
+# Creo el objeto del formulario del menu principal
+form_principal = FormSettings(pantalla, ANCHO_PANTALLA/2-400, ALTO_PANTALLA/2-200, 800,400, "dodgerblue4", "cyan3", 5, True)
 
-### Loop ##################################################################################################
+
+# Crea la base de datos
+crear_base()
+
+
+# Loop # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 while True:
-    RELOJ.tick(FPS)
+    reloj.tick(FPS)
     eventos = pygame.event.get()
-    #form_select_nivel.lista_eventos = eventos
-    for evento in eventos:
-        if evento.type == pygame.QUIT:
-                pygame.quit()
-                sys.exit()
-        if evento.type == pygame.KEYDOWN:
-            if evento.key == pygame.K_ESCAPE:
-                    juego_activo = False
-### pantalla START #########################################################################################
-    if juego_activo:
-        if flag_start:
+    for event in eventos:
+        if event.type == QUIT:
+            pygame.quit()
+            sys.exit()
+        # Debug mode
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_TAB:
+                cambiar_modo()
+    
+    # Pantalla de start
+    if flag_start:
             if pygame.key.get_pressed()[pygame.K_RETURN] == False:
                 dibujar_start(pantalla)
             else:
                 flag_start = False
-### NIVEL ################################################################################################
-        if flag_start == False:
-            form_inicio.update(eventos)
-### Menu Pausa ##############################################################################################
+
+    # Menu principal
     else:
-        #form_pausa.update(eventos)
-        if pygame.key.get_pressed()[pygame.K_SPACE] and juego_activo == False:
-            juego_activo = True
+        pantalla.blit(pygame.transform.scale(pygame.image.load("assets/fondo_start_frames/frame_01_delay-0.1s.png"), (ANCHO_PANTALLA, ALTO_PANTALLA)), (0,0))
+        form_principal.update(eventos)
 
+        
     pygame.display.flip()
-
-    #SE ESTA BLITEANDO EL FONDO DELANTE DE TODO

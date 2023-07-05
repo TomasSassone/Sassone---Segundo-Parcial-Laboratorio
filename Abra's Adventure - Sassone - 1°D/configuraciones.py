@@ -285,8 +285,47 @@ pocion_idle = [pygame.image.load("assets/items/pocion/pocion_1.png"),
                 pygame.image.load("assets/items/pocion/pocion_2.png")
 ]
 
-carameloraro_idle = [pygame.image.load("assets/items/carameloraro.png")
-
+carameloraro_idle = [pygame.image.load("assets/items/carameloraro/carameloraro_1.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_1.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_1.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_1.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_1.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_1.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_1.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_1.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_1.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_1.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_2.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_2.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_2.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_2.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_2.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_3.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_3.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_3.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_3.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_4.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_4.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_4.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_4.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_4.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_4.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_4.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_4.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_4.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_3.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_3.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_3.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_3.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_3.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_3.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_2.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_2.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_2.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_2.png"),         
+                    pygame.image.load("assets/items/carameloraro/carameloraro_2.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_2.png"),
+                    pygame.image.load("assets/items/carameloraro/carameloraro_2.png"),  
 ]
 
 rocket_fem_camina_der = [pygame.image.load("assets/rocket secuaz/2 (1).png"),
@@ -307,6 +346,25 @@ rocket_fem_camina_der = [pygame.image.load("assets/rocket secuaz/2 (1).png"),
 ]
 
 rocket_fem_camina = girar_imagenes(rocket_fem_camina_der, True, False)
+
+rocket_masc_camina_der = [pygame.image.load("assets/rocket secuaz/0.png"),
+                pygame.image.load("assets/rocket secuaz/0.png"),
+                pygame.image.load("assets/rocket secuaz/0.png"),
+                pygame.image.load("assets/rocket secuaz/0.png"),
+                pygame.image.load("assets/rocket secuaz/0.png"),
+                pygame.image.load("assets/rocket secuaz/1.png"),
+                pygame.image.load("assets/rocket secuaz/1.png"),
+                pygame.image.load("assets/rocket secuaz/1.png"),
+                pygame.image.load("assets/rocket secuaz/1.png"),
+                pygame.image.load("assets/rocket secuaz/1.png"),
+                pygame.image.load("assets/rocket secuaz/2.png"),
+                pygame.image.load("assets/rocket secuaz/2.png"),
+                pygame.image.load("assets/rocket secuaz/2.png"),
+                pygame.image.load("assets/rocket secuaz/2.png"),
+                pygame.image.load("assets/rocket secuaz/2.png"),
+]
+
+rocket_masc_camina = girar_imagenes(rocket_masc_camina_der, True, False)
 
 rocket_fem_hit_izq = [pygame.image.load("assets/rocket secuaz/2 (1).png"),
                 pygame.image.load("assets/rocket secuaz/2 (1).png"),
@@ -336,6 +394,145 @@ rocket_fem_hit_izq = [pygame.image.load("assets/rocket secuaz/2 (1).png"),
 
 rocket_fem_idle = [
                 pygame.image.load("assets/rocket secuaz/2 (3).png"),
+]
+
+boss_idle = [pygame.image.load("assets/rhydon sprites/rhydon_idle_1.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_idle_1.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_idle_1.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_idle_1.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_idle_1.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_idle_1.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_idle_1.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_idle_1.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_idle_1.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_idle_1.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_idle_2.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_idle_2.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_idle_2.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_idle_2.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_idle_2.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_idle_2.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_idle_2.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_idle_2.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_idle_2.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_idle_2.png")
+]
+
+boss_attack = [pygame.image.load("assets/rhydon sprites/rhydon_attack_1.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_1.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_1.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_1.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_1.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_1.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_1.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_1.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_1.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_1.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_1.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_1.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_1.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_1.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_1.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_1.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_1.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_2.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_2.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_2.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_2.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_2.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_2.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_2.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_2.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_2.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_2.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_2.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_2.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_2.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_2.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_2.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_2.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_2.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_3.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_3.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_3.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_3.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_4.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_4.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_4.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_4.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_4.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_4.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_4.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_4.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_4.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_4.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_4.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_4.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_4.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_5.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_5.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_5.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_5.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_5.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_5.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_5.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_5.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_6.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_6.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_6.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_6.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_6.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_6.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_6.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_6.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_6.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_6.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_6.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_6.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_6.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_6.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_6.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_6.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_6.png"),
+                pygame.image.load("assets/rhydon sprites/rhydon_attack_6.png")
+]
+
+boss_hit = [pygame.image.load("assets/rhydon sprites/boss_hit.png"),
+                pygame.image.load("assets/rhydon sprites/boss_hit.png"),
+                pygame.image.load("assets/rhydon sprites/boss_hit.png"),
+                pygame.image.load("assets/rhydon sprites/boss_hit.png"),
+                pygame.image.load("assets/rhydon sprites/boss_hit.png"),
+                pygame.image.load("assets/rhydon sprites/boss_hit.png"),
+                pygame.image.load("assets/rhydon sprites/boss_hit.png"),
+                pygame.image.load("assets/rhydon sprites/boss_hit.png"),
+                pygame.image.load("assets/rhydon sprites/boss_hit.png")
+]
+
+proyectil_boss = [pygame.image.load("assets/proyectil_boss/1.png"),
+                pygame.image.load("assets/proyectil_boss/1.png"),
+                pygame.image.load("assets/proyectil_boss/1.png"),
+                pygame.image.load("assets/proyectil_boss/1.png"),
+                pygame.image.load("assets/proyectil_boss/1.png"),
+                pygame.image.load("assets/proyectil_boss/2.png"),
+                pygame.image.load("assets/proyectil_boss/2.png"),
+                pygame.image.load("assets/proyectil_boss/2.png"),
+                pygame.image.load("assets/proyectil_boss/2.png"),
+                pygame.image.load("assets/proyectil_boss/3.png"),
+                pygame.image.load("assets/proyectil_boss/3.png"),
+                pygame.image.load("assets/proyectil_boss/3.png"),
+                pygame.image.load("assets/proyectil_boss/3.png"),
+                pygame.image.load("assets/proyectil_boss/4.png"),
+                pygame.image.load("assets/proyectil_boss/4.png"),
+                pygame.image.load("assets/proyectil_boss/4.png"),
+                pygame.image.load("assets/proyectil_boss/4.png"),
+                pygame.image.load("assets/proyectil_boss/5.png"),
+                pygame.image.load("assets/proyectil_boss/5.png"),
+                pygame.image.load("assets/proyectil_boss/5.png"),
+                pygame.image.load("assets/proyectil_boss/5.png"),
+                pygame.image.load("assets/proyectil_boss/6.png"),
+                pygame.image.load("assets/proyectil_boss/6.png"),
+                pygame.image.load("assets/proyectil_boss/6.png"),
+                pygame.image.load("assets/proyectil_boss/6.png")
 ]
 
 sierra = [
@@ -477,6 +674,16 @@ diccionario_animaciones_enemigo['rocket_fem_camina'] = rocket_fem_camina
 diccionario_animaciones_enemigo['rocket_fem_camina_der'] = rocket_fem_camina_der
 diccionario_animaciones_enemigo['rocket_fem_idle'] = rocket_fem_idle
 diccionario_animaciones_enemigo['rocket_fem_hit_izq'] = rocket_fem_hit_izq
+diccionario_animaciones_enemigo['rocket_masc_camina'] = rocket_masc_camina
+diccionario_animaciones_enemigo['rocket_masc_camina_der'] = rocket_masc_camina_der
+
+
+diccionario_animaciones_boss = {}
+diccionario_animaciones_boss['boss_idle'] = boss_idle
+diccionario_animaciones_boss['boss_attack'] = boss_attack
+diccionario_animaciones_boss['boss_hit'] = boss_hit
+diccionario_animaciones_boss['proyectil_izquierda'] = proyectil_boss
+
 
 diccionario_animaciones_item = {}
 diccionario_animaciones_item['pocion_idle'] = pocion_idle

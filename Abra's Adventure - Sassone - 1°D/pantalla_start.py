@@ -4,6 +4,8 @@ from classes.class_imagen import *
 
 pantalla = pygame.display.set_mode(TAMAÑO_PANTALLA)
 
+# Declaro todas las imagenes y musica 
+
 abra_inicio = pygame.image.load("assets/abra - alakazam sprites/14.png").convert_alpha()
 abra_inicio = pygame.transform.scale(abra_inicio, (150, 150))
 abra_pos = abra_inicio.get_rect(center = (ANCHO_PANTALLA/2, 350))
@@ -23,6 +25,7 @@ game_over_pantalla_fade.fill((0, 0, 0))
 game_over_pantalla_fade.set_alpha(60)
 
 def dibujar_start(pantalla):
+    #bliteo el fondo y un fade para oscurecer la imagen, creo y bliteo las fuentes
     global flag_bajando
 
     pantalla.blit(fondo_start, (0,0))
@@ -59,13 +62,14 @@ def dibujar_start(pantalla):
 
 
     
-    #screen.blit(ground_surface, (0,550))
+    # Acreen.blit(ground_surface, (0,550))
     pantalla.blit(texto_titulo_outline, texto_titulo_outline_rect)
     pantalla.blit(texto_titulo, texto_titulo_rect)
     pantalla.blit(boton_start_outline, boton_start_outline_rect)
     pantalla.blit(boton_start, boton_start_rect)
     pantalla.blit(controles, controles_rect)
-    #abra startpantalla
+    # Abra startpantalla
+    # Controla la oscilacion del personaje del inicio (unicamente visual)
     if flag_bajando:
         abra_pos.y += 1 #baja
         if abra_pos.y == 300:
