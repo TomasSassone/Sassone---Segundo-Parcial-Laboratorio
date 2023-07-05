@@ -40,20 +40,19 @@ class Nivel_1(Nivel):
         lista_plataformas = [plat_1, plat_2, plat_3, plat_4]
 
         #ENEMIGOS
-        enemigo1 = Enemigo(lados_plat2['left'].left, lados_plat2['top'].top, 5, diccionario_animaciones_enemigo, 30, 50, lados_plat2['right'].right, 2, pantalla)
-        enemigo2 = Enemigo(lados_plat3['left'].left, lados_plat3['top'].top, 5, diccionario_animaciones_enemigo, 30, 50, lados_plat3['right'].right, 1, pantalla)
-        enemigo3 = Enemigo(lados_plat1['main'].left, lados_plat1['top'].top, 5, diccionario_animaciones_enemigo, 30, 50, lados_plat1['right'].right, 3, pantalla)
+        enemigo1 = Enemigo(lados_plat2['left'].left, lados_plat2['top'].top, 6, diccionario_animaciones_enemigo, 30, 50, lados_plat2['right'].right, 2, pantalla)
+        enemigo2 = Enemigo(lados_plat3['left'].left, lados_plat3['top'].top, 6, diccionario_animaciones_enemigo, 30, 50, lados_plat3['right'].right, 1, pantalla)
+        enemigo3 = Enemigo(lados_plat1['main'].left, lados_plat1['top'].top, 6, diccionario_animaciones_enemigo, 30, 50, lados_plat1['right'].right, 3, pantalla)
         lista_enemigos = [enemigo1, enemigo2, enemigo3]
 
         # Items
         pocion_1 = Item(30, 30, lados_plat4['left'].left + 50, lados_plat4['top'].top -1, diccionario_animaciones_item, 'pocion_idle', pantalla)
         pocion_2 = Item(30, 30, lados_plat3['left'].left + 10, lados_plat3['top'].top -1, diccionario_animaciones_item, 'pocion_idle', pantalla)
-        carameloraro_1 = Item(30, 30, lados_plat1['left'].left + 50, lados_plat1['top'].top -1, diccionario_animaciones_item, 'carameloraro_idle', pantalla)
+        carameloraro_1 = Item(30, 35, lados_plat1['left'].left + 50, lados_plat1['top'].top -1, diccionario_animaciones_item, 'carameloraro_idle', pantalla)
         lista_items = [pocion_1, pocion_2, carameloraro_1]
 
         # Trampas
-        trampa1 = Trampa(lados_plat4['left'].left, lados_plat4['top'].top, diccionario_animaciones_trampas, 25, 12, lados_plat4['right'].right, pantalla, 1, "half")
-        lista_trampas = [trampa1]
+        lista_trampas = []
 
         mi_personaje = Personaje(40, 50, 150, 440, 3, diccionario_animaciones_jugador, 5, pantalla, lista_plataformas)
 

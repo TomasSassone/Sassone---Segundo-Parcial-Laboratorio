@@ -1,6 +1,7 @@
 import pygame
 from constantes_pygame import *
 from configuraciones import reescalar_imagenes, obtener_rectangulos
+from classes.class_proyectil import Proyectil
 from modo import *
 
 class Personaje:
@@ -37,51 +38,9 @@ class Personaje:
         self.proyectiles = []
         self.esta_flotando = False
         self.lista_plataformas = lista_plataformas
-        pygame.mixer.init()
-        pygame.mixer.music.load("assets/sonidos/ataque_melee_jugador.wav")
-        pygame.mixer.music.set_volume(0.01)
 
 
 # HABILIDADES PERSONAJE: ataque melee, proyectil, salto, caida lenta manteniendo shift
-    class Proyectil:
-        def __init__(self, x, y, orientacion, pantalla, animaciones):
-            self.image = pygame.image.load("assets/proyectil abra/1.png")  # Carga la imagen del proyectil
-            self.rect = self.image.get_rect()
-            self.rect.center = (x, y)
-            self.speed = 3  # Velocidad del proyectil
-            self.orientacion = orientacion
-            self.pantalla = pantalla
-            self.flag_hit_proyectil = False
-            #animaciones
-            self.contador_pasos = 0
-            self.animaciones = animaciones
-
-        def animar(self, que_animacion:str):
-            animacion = self.animaciones[que_animacion]
-            largo = len(animacion)
-
-            if self.contador_pasos >= largo:
-                self.contador_pasos = 0
-            
-            self.pantalla.blit(animacion[self.contador_pasos], self.rect)
-            self.contador_pasos += 1    
-        
-        def update(self, enemigo):
-            if self.orientacion:
-                self.rect.x -= self.speed
-                self.animar("proyectil_izquierda")
-            else:
-                self.rect.x += self.speed
-                self.animar("proyectil_derecha")
-            if self.rect.colliderect(enemigo.rectangulo):
-                if self.flag_hit_proyectil == False:
-                    enemigo.restar_hp()
-                    self.flag_hit_proyectil = True
-            if get_modo():
-                pygame.draw.rect(self.pantalla, "blue", self.rect, 2)
-
-
-
     def reescalar_animaciones(self):
         for clave in self.animaciones:
             reescalar_imagenes(self.animaciones[clave], self.width, self.height)
@@ -129,7 +88,6 @@ class Personaje:
                         self.esta_saltando = True
                         self.desplazamiento_y = self.potencia_salto
                 case "proyectil":
-                    pygame.mixer.music.play(0)
                     if self.flag_orientacion:
                         self.animar("personaje_dispara")
                     else:
@@ -152,6 +110,8 @@ class Personaje:
                 proyectil.update(enemigo)
                 
         self.aplicar_gravedad(piso)
+        if get_modo():
+            pygame.draw.rect(self.pantalla, "blue", self.rectangulo, 2)
 
 
     def movimiento(self):
@@ -221,14 +181,12 @@ class Personaje:
 
 
     def disparar_proyectil(self, enemigo):
-        proyectil = self.Proyectil(self.rectangulo.x, self.rectangulo.y, self.flag_orientacion, self.pantalla, self.animaciones)
+        proyectil = Proyectil(self.rectangulo.x, self.rectangulo.y, self.flag_orientacion, self.pantalla, self.animaciones)
         if self.flag_orientacion:
             proyectil.rect.x += self.width  # Ajustar la posición horizontal si el personaje está orientado hacia la derecha
         else:
             proyectil.rect.x += proyectil.rect.width  # Ajustar la posición horizontal si el personaje está orientado hacia la izquierda
         self.proyectiles.append(proyectil)
-        if proyectil.rect.colliderect(enemigo.rectangulo):
-            print("hit proyectil")
 
 
     def atacar(self, tipo_ataque, enemigo):
@@ -237,7 +195,6 @@ class Personaje:
                 self.que_hace = "golpe"
                 golpe = pygame.Rect(self.rectangulo.x - 40, self.rectangulo.y - 40, self.width+80, self.height+80)
                 if golpe.colliderect(enemigo.rectangulo):
-                    print("ataque")
                     enemigo.restar_hp()
                 if get_modo():
                     pygame.draw.rect(self.pantalla, "blue", golpe, 2)
@@ -251,8 +208,12 @@ class Personaje:
             if item.key == 'pocion_idle':
                 if self.hp <= 3:
                     if self.lados["main"].colliderect(item.lados['main']) and self.hp < 3:
-                        print(f"HP:  {self.hp}")
                         self.hp += 1
+        if self.hp <= 0:
+            self.matar_jugador()
+    
+    def restar_hp(self):
+        self.hp -= 1
         if self.hp <= 0:
             self.matar_jugador()
 
@@ -260,4 +221,3 @@ class Personaje:
     def matar_jugador(self):
         self.animar("personaje_muerto")
         self.flag_muriendo = True
-        print("rip")

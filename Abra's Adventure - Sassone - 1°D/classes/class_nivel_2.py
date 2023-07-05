@@ -46,15 +46,15 @@ class Nivel_2(Nivel):
 
         #ENEMIGOS
         enemigo1 = Enemigo(lados_plat5['left'].left, lados_plat5['top'].top, 15, diccionario_animaciones_enemigo, 30, 50, lados_plat5['right'].right, 3, pantalla)
-        enemigo2 = Enemigo(lados_plat3['left'].left, lados_plat3['top'].top, 10, diccionario_animaciones_enemigo, 30, 50, lados_plat3['right'].right, 2, pantalla)
-        enemigo3 = Enemigo(lados_plat1['main'].left, lados_plat1['top'].top, 8, diccionario_animaciones_enemigo, 30, 50, lados_plat1['right'].right, 3, pantalla)
+        enemigo2 = Enemigo(lados_plat3['left'].left, lados_plat3['top'].top, 9, diccionario_animaciones_enemigo, 30, 50, lados_plat3['right'].right, 2, pantalla)
+        enemigo3 = Enemigo(lados_plat1['main'].left, lados_plat1['top'].top, 9, diccionario_animaciones_enemigo, 30, 50, lados_plat1['right'].right, 3, pantalla)
         lista_enemigos = [enemigo1, enemigo2, enemigo3]
 
         # Items
         pocion_1 = Item(30, 30, lados_plat4['left'].left + 50, lados_plat4['top'].top -1, diccionario_animaciones_item, 'pocion_idle', pantalla)
         pocion_2 = Item(30, 30, lados_plat2['left'].left + 80, lados_plat2['top'].top -1, diccionario_animaciones_item, 'pocion_idle', pantalla)
-        carameloraro_1 = Item(30, 30, lados_plat1['left'].left + 50, lados_plat1['top'].top -1, diccionario_animaciones_item, 'carameloraro_idle', pantalla)
-        carameloraro_2 = Item(30, 30, lados_plat3['left'].left + 50, lados_plat3['top'].top -1, diccionario_animaciones_item, 'carameloraro_idle', pantalla)
+        carameloraro_1 = Item(30, 35, lados_plat1['left'].left + 50, lados_plat1['top'].top -1, diccionario_animaciones_item, 'carameloraro_idle', pantalla)
+        carameloraro_2 = Item(30, 35, lados_plat3['left'].left + 50, lados_plat3['top'].top -1, diccionario_animaciones_item, 'carameloraro_idle', pantalla)
         lista_items = [pocion_1, pocion_2, carameloraro_1, carameloraro_2]
 
         trampa1 = Trampa(lados_plat4['left'].left, lados_plat4['top'].top, diccionario_animaciones_trampas, 25, 12, lados_plat4['right'].right, pantalla, 3, "half")
