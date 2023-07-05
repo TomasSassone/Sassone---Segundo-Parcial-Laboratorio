@@ -11,12 +11,12 @@ class Label(Widget):
         self._text = text
         self._font = pygame.font.Font(font,font_size)
         self._font_color = font_color
-        #if path_image != "":
-        aux_image = pygame.image.load(path_image)
-        aux_image = pygame.transform.scale(aux_image,(w,h))
-        #else:
-            # aux_image = pygame.Surface((w,h))
-            #aux_image.set_alpha(0)#Transparente
+        if path_image != "":
+            aux_image = pygame.image.load(path_image)
+            aux_image = pygame.transform.scale(aux_image,(w,h))
+        else:
+            aux_image = pygame.Surface((w,h))
+            aux_image.set_alpha(0)#Transparente
             
         self._slave = aux_image
         self.img_original = aux_image.copy()
@@ -32,7 +32,7 @@ class Label(Widget):
         self._slave.blit(self.img_original, (0, 0)) 
         image_text = self._font.render(self._text, True, self._font_color)
         
-        media_texto_horizontal = image_text.get_width() / 2
+        media_texto_horizontal = image_text.get_width() / 2 - 12
         media_texto_vertical = image_text.get_height() / 2
 
         media_horizontal = self._w / 2
